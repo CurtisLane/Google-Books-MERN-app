@@ -1,0 +1,21 @@
+{
+  "name": "Google-Books-MERN-app",
+  "version": "1.0.0",
+  "description": "This full stack application allows user to connect with the Google Books API, search for books, and save their favorites to a database.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CurtisLane/Google-Books-MERN-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CurtisLane/Google-Books-MERN-app/issues"
+  },
+  "homepage": "https://github.com/CurtisLane/Google-Books-MERN-app#readme"
+}
