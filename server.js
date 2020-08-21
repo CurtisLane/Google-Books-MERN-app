@@ -18,7 +18,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", {
 
 // Static assets for heroku
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+  app.use(express.static("client/build/index.html"));
 }
 
 // Api route for index.html on published build
