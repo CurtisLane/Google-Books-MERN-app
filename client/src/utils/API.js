@@ -1,9 +1,14 @@
 import axios from "axios";
+require('dotenv').config()
+
+
+
 
 export default {
   // Google Books API Search
   getSearch: function(query){
-    return axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}-terms&key=${process.env.REACT_APP_API_KEY}`)
+    // https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key=yourAPIKey
+    return console.log(process.env) //axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}:keyes&key=${process.env.REACT_APP_API_KEY}`) 
   },
   // Gets all books
   getBooks: function() {
