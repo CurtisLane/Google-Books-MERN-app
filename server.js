@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(routes);
 
 // Connect to mongoose database
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Static assets for heroku
 if (process.env.NODE_ENV === "production") {
