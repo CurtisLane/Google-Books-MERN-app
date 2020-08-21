@@ -1,6 +1,9 @@
 .searchTopCallout {
     margin-top: 3rem;
 }
+#topCallout {
+    padding: 3rem 0;
+}
 .searchFormCallout {
     margin-top: 2rem;
     text-align: left;

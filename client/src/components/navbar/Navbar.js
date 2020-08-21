@@ -1,4 +1,5 @@
 import React from 'react'
+import './navbar.css'
 
 function Navbar(){
     return (
@@ -6,7 +7,7 @@ function Navbar(){
             <div className="top-bar-left">
                 <ul className="menu">
                     <li className="menu-text">Google Books Search and Save</li>
-                    <li><a href="/">Home</a></li>
+                    <li><a href="/">Search</a></li>
                     <li><a href="/saved">Saved Books</a></li>
                 </ul>
             </div>
