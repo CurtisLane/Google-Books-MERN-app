@@ -8,7 +8,7 @@ export default {
   // Google Books API Search
   getSearch: function(query){
     // https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key=yourAPIKey
-    return axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}+inauthor:keyes&key=${process.env.REACT_APP_API_KEY}`) //console.log(process.env)
+    return axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}&key=${process.env.REACT_APP_API_KEY}`) 
   },
   // Gets all books
   getBooks: function() {

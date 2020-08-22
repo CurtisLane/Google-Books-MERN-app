@@ -10,9 +10,9 @@ function Results({books}) {
                     <Result 
                     key={book.id}
                     title={book.volumeInfo.title}
-                    authors={book.volumeInfo.authors}
+                    authors={book.volumeInfo.authors ? book.volumeInfo.authors : []}
                     description={book.volumeInfo.description}
-                    image={book.volumeInfo.imageLinks.thumbnail}
+                    image={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : ''}
                     link={book.volumeInfo.previewLink}
                     />
                 ))}

@@ -29,11 +29,15 @@ class Search extends Component {
         event.preventDefault()
         API.getSearch(this.state.query)
         .then(results => {
+            if (results){
+                console.log(results.data.items)
+                this.setState({
+                    books: results.data.items, query: ''
+                })
+            } else {
+                console.log('no results')
+            }
             
-            console.log(results.data.items)
-            this.setState({
-                books: results.data.items, query: ''
-            })
             
         })
     }
