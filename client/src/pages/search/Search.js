@@ -28,12 +28,14 @@ class Search extends Component {
     handleFormSubmit = event => {
         event.preventDefault()
         API.getSearch(this.state.query)
-        .then(results => 
-            console.log(results)
-            // this.setState({
-            //     books: results.data, query: ''
-            // })
-        )
+        .then(results => {
+            
+            console.log(results.data.items)
+            this.setState({
+                books: results.data.items, query: ''
+            })
+            
+        })
     }
 
 
@@ -46,7 +48,8 @@ class Search extends Component {
                     handleInputChange={this.handleInputChange} 
                     handleFormSubmit={this.handleFormSubmit} 
                 />
-                <Results />
+                {this.state.books.length ? <Results books={this.state.books} /> : <></>}
+
             </>
         )
     }

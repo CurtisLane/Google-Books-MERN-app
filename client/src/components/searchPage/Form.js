@@ -7,7 +7,7 @@ function Form({handleInputChange, handleFormSubmit}) {
                 <p>Book Search</p>
                 <label>
                     <small>Book</small>
-                    <input type='text' name="query" onChange={handleInputChange} />
+                    <input type='text' name="query" onChange={handleInputChange} autoComplete="off" />
                     <a className="button primary" href="/" onClick={handleFormSubmit}>Search</a>
                 </label>                    
             </div>
