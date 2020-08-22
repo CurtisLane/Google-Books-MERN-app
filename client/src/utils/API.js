@@ -5,10 +5,9 @@ require('dotenv').config()
 
 
 export default {
-  // Google Books API Search
-  getSearch: function(query){
-    // https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key=yourAPIKey
-    return axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}&key=${process.env.REACT_APP_API_KEY}`) 
+  // Get google books
+  getGoogleBooks: function(title){
+    return axios.get('/api/google/' + title)
   },
   // Gets all books
   getBooks: function() {

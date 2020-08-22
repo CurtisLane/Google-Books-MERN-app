@@ -10,8 +10,6 @@ const routes = require("./routes");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Access api routes
-// app.use(routes);
 
 // Connect to mongoose database
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", { useNewUrlParser: true, useUnifiedTopology: true });
@@ -19,12 +17,14 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", {
 // Static assets for heroku
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
+  // Api route for index.html on published build
+  app.get("*", function (req, res) {
+    res.sendFile(path.join(__dirname, "./client/build"));
+  });
 }
 
-// Api route for index.html on published build
-app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "./client/build"));
-});
+// Access api routes
+app.use(routes);
 
 app.listen(PORT, function () {
   console.log(`🌎 ==> API server now on port ${PORT}!`);

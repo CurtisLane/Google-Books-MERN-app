@@ -27,12 +27,12 @@ class Search extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault()
-        API.getSearch(this.state.query)
+        API.getGoogleBooks(this.state.query)
         .then(results => {
             if (results){
-                console.log(results.data.items)
+                console.log(results.data)
                 this.setState({
-                    books: results.data.items, query: ''
+                    books: results.data, query: ''
                 })
             } else {
                 console.log('no results')
