@@ -21,7 +21,6 @@ class Search extends Component {
         this.setState({
             [name]: value
         })
-        console.log(this.state.query)
     }
 
     handleFormSubmit = event => {
@@ -39,6 +38,15 @@ class Search extends Component {
         })
     }
 
+    handleSave = event => {
+        // event.preventDefault()
+        console.log(JSON.parse(event.target.value))
+        API.saveBook(JSON.parse(event.target.value))
+        .then(results => {
+            console.log(results)
+        })
+    }
+
     render() {
         return (
             <>
@@ -46,7 +54,7 @@ class Search extends Component {
                     handleInputChange={this.handleInputChange} 
                     handleFormSubmit={this.handleFormSubmit} 
                 />
-                {this.state.books.length ? <Results books={this.state.books} /> : <></>}
+                {this.state.books.length ? <Results save={this.handleSave} books={this.state.books} /> : <></>}
             </>
         )
     }    

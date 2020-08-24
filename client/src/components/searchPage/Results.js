@@ -1,7 +1,7 @@
 import React from 'react'
 import Result from './Result'
 
-function Results({books}) {
+function Results({books, save}) {
     return (
         <div className="grid-x grid-margin-x searchFormCallout">
             <div className="callout primary cell small-10 small-offset-1">
@@ -14,6 +14,7 @@ function Results({books}) {
                     description={book.volumeInfo.description}
                     image={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : ''}
                     link={book.volumeInfo.previewLink}
+                    save={save}
                     />
                 ))}
 

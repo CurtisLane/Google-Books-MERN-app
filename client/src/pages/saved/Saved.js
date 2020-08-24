@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-function Saved() {
-    return <h1>Saved</h1>
+class Saved extends Component {
+
+
+    render(){
+        return <h1>Saved</h1>
+
+    }
 }
 
 export default Saved

@@ -1,7 +1,9 @@
 import React from 'react'
 import './style.css'
+import LinkButton from '../buttons/LinkButton'
+import SaveButton from '../buttons/SaveButton'
 
-function Result({title, authors, description, image, link}) {
+function Result({title, authors, description, image, link, save}) {
     return (
         <div className="grid-x grid-margin-x searchFormCallout">
             <div className="callout primary cell small-10 small-offset-1">
@@ -9,6 +11,11 @@ function Result({title, authors, description, image, link}) {
                 <p><strong>Title:</strong> {title}</p>
                 {authors.length ? <p><strong>Authors:</strong> {authors.join(', ')}</p> : <p>No Authors Available</p>}
                 {description ? <p><strong>Description:</strong> {description}</p> : <p>No Description Available</p>}
+                <span>
+                    
+                <LinkButton href={link} />
+                <SaveButton book={{title: title, authors:authors, description:description, image:image, link:link}} save={save} />
+                </span>
                 {/* link and save buttons go here */}
             </div>
         </div>
