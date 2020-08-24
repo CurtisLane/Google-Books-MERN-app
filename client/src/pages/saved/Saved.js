@@ -17,14 +17,23 @@ class Saved extends Component {
         })
     }
 
+    handleDelete = event => {
+        event.preventDefault()
+        let id = event.target.value
+        API.deleteBook(id)
+        .then(result => {
+            const newBooks = this.state.books.filter(book => book._id !== id)
+            this.setState({books: newBooks})
+        })
+    }
+
     render(){
         return (
             <>
-                {this.state.books.length ? <Results books={this.state.books} /> : <>
+                {this.state.books.length ? <Results handleDelete={this.handleDelete} books={this.state.books} /> : <>
                     <div className="grid-x grid-margin-x grid-padding-y searchTopCallout">
                         <div className="callout primary cell small-10 small-offset-1" id="topCallout">
                             <h3>Sorry, no results came back. Try saving some books first!</h3>
-                            
                         </div>
                     </div>
                 </>}

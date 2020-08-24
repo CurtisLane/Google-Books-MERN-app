@@ -4,7 +4,7 @@ function Form({handleInputChange, handleFormSubmit}) {
     return (
         <div className="grid-x grid-margin-x searchFormCallout">
             <div className="callout primary cell small-10 small-offset-1">
-                <p>Book Search</p>
+                <p><strong>Book Search</strong></p>
                 <label>
                     <small>Book</small>
                     <input type='text' name="query" onChange={handleInputChange} autoComplete="off" />

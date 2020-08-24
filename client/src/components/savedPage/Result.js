@@ -3,7 +3,7 @@ import './style.css'
 import LinkButton from '../buttons/LinkButton'
 import DeleteButton from '../buttons/DeleteButton'
 
-function Result({id, title, authors, description, image, link}) {
+function Result({id, title, authors, description, image, link, handleDelete}) {
     return (
         <div className="grid-x grid-margin-x searchFormCallout">
             <div className="callout primary cell small-10 small-offset-1">
@@ -14,7 +14,7 @@ function Result({id, title, authors, description, image, link}) {
                 <span>
                     
                 <LinkButton href={link} />
-                <DeleteButton />
+                <DeleteButton id={id} handleDelete={handleDelete} />
                 </span>
             </div>
         </div>
