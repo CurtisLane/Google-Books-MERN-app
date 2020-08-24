@@ -8,12 +8,7 @@ class Search extends Component {
 
     state = {
         books: [],
-        query: '',
-        title: '',
-        authors: [],
-        description: '',
-        image: '',
-        link: ''
+        query: ''
     }
 
     handleInputChange = event => {

@@ -16,7 +16,6 @@ function Result({title, authors, description, image, link, save}) {
                 <LinkButton href={link} />
                 <SaveButton book={{title: title, authors:authors, description:description, image:image, link:link}} save={save} />
                 </span>
-                {/* link and save buttons go here */}
             </div>
         </div>
     )
