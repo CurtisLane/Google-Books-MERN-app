@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Form from '../../components/searchPage/Form'
 import './style.css'
-import Title from '../../components/searchPage/Title'
 import Results from '../../components/searchPage/Results'
 import API from '../../utils/API'
 
@@ -37,27 +36,20 @@ class Search extends Component {
             } else {
                 console.log('no results')
             }
-            
-            
         })
     }
-
-
 
     render() {
         return (
             <>
-                <Title />
                 <Form 
                     handleInputChange={this.handleInputChange} 
                     handleFormSubmit={this.handleFormSubmit} 
                 />
                 {this.state.books.length ? <Results books={this.state.books} /> : <></>}
-
             </>
         )
-    }
-    
+    }    
 }
 
 export default Search
